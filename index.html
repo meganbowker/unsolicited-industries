@@ -8,35 +8,18 @@
     body {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      overflow: hidden;
       font-family: "Times New Roman", Times, serif;
       color: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    .background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-    }
-    iframe {
-      width: 100vw;
-      height: 100vh;
-      border: none;
-      object-fit: cover;
-      opacity: 0.2;
-      pointer-events: none;
+      background-color: white;
     }
     .container {
-      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
     }
     h1 {
       font-size: 2.5em;
@@ -44,17 +27,45 @@
     }
     p {
       font-size: 1.25em;
-      margin: 0;
+      margin: 0 0 2rem 0;
+    }
+    .thumbnail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      width: 100%;
+      max-width: 1200px;
+      padding: 1rem;
+    }
+    .thumbnail-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .thumbnail-grid a {
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
-  <div class="background">
-    <iframe src="https://www.youtube.com/embed/videoseries?list=PLrEnWoR732-BHrPp_Pm8_VleD68f9s14-&autoplay=1&mute=1&controls=0&loop=1&playlist=PLrEnWoR732-BHrPp_Pm8_VleD68f9s14-" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
   <div class="container">
     <h1>Unsolicited Industries™</h1>
     <p>Ongoing art and design projects conducted by Megan Bowker</p>
+  </div>
+  <div class="thumbnail-grid">
+    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg" alt="YouTube Thumbnail">
+    <img src="https://img.youtube.com/vi/3JZ_D3ELwOQ/0.jpg" alt="YouTube Thumbnail">
+    <img src="https://img.youtube.com/vi/V-_O7nl0Ii0/0.jpg" alt="YouTube Thumbnail">
+    <img src="https://img.youtube.com/vi/eY52Zsg-KVI/0.jpg" alt="YouTube Thumbnail">
+    <img src="https://img.youtube.com/vi/2Vv-BfVoq4g/0.jpg" alt="YouTube Thumbnail">
+    <img src="https://img.youtube.com/vi/9bZkp7q19f0/0.jpg" alt="YouTube Thumbnail">
+    <img src="https://img.youtube.com/vi/hTWKbfoikeg/0.jpg" alt="YouTube Thumbnail">
+    <img src="https://img.youtube.com/vi/tgbNymZ7vqY/0.jpg" alt="YouTube Thumbnail">
+    <img src="https://img.youtube.com/vi/fJ9rUzIMcZQ/0.jpg" alt="YouTube Thumbnail">
+    <img src="https://img.youtube.com/vi/ktvTqknDobU/0.jpg" alt="YouTube Thumbnail">
+    <img src="https://img.youtube.com/vi/L_jWHffIx5E/0.jpg" alt="YouTube Thumbnail">
+    <img src="https://img.youtube.com/vi/kXYiU_JCYtU/0.jpg" alt="YouTube Thumbnail">
   </div>
 </body>
 </html>
