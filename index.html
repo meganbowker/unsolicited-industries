@@ -11,61 +11,70 @@
       font-family: "Times New Roman", Times, serif;
       color: black;
       background-color: white;
-    }
-    .container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem;
+      justify-content: flex-start;
+      height: 100vh;
       text-align: center;
-      position: relative;
-      z-index: 1;
     }
     h1 {
       font-size: 2.5em;
+      margin-top: 2rem;
       margin-bottom: 1rem;
     }
     p {
       font-size: 1.25em;
-      margin: 0 0 2rem 0;
+      margin-bottom: 2rem;
     }
-    .thumbnail-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
-      width: 100%;
-      max-width: 1200px;
+    textarea {
+      width: 80%;
+      max-width: 600px;
+      height: 150px;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1em;
       padding: 1rem;
+      margin-bottom: 1rem;
     }
-    .thumbnail-grid img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
+    button {
+      font-size: 1em;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-family: "Times New Roman", Times, serif;
     }
-    .thumbnail-grid a {
-      pointer-events: none;
+    .comments {
+      margin-top: 2rem;
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+    }
+    .comment {
+      border-top: 1px solid #ccc;
+      padding: 1rem 0;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Unsolicited Industries™</h1>
-    <p>Ongoing art and design projects conducted by Megan Bowker</p>
-  </div>
-  <div class="thumbnail-grid">
-    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg" alt="YouTube Thumbnail">
-    <img src="https://img.youtube.com/vi/3JZ_D3ELwOQ/0.jpg" alt="YouTube Thumbnail">
-    <img src="https://img.youtube.com/vi/V-_O7nl0Ii0/0.jpg" alt="YouTube Thumbnail">
-    <img src="https://img.youtube.com/vi/eY52Zsg-KVI/0.jpg" alt="YouTube Thumbnail">
-    <img src="https://img.youtube.com/vi/2Vv-BfVoq4g/0.jpg" alt="YouTube Thumbnail">
-    <img src="https://img.youtube.com/vi/9bZkp7q19f0/0.jpg" alt="YouTube Thumbnail">
-    <img src="https://img.youtube.com/vi/hTWKbfoikeg/0.jpg" alt="YouTube Thumbnail">
-    <img src="https://img.youtube.com/vi/tgbNymZ7vqY/0.jpg" alt="YouTube Thumbnail">
-    <img src="https://img.youtube.com/vi/fJ9rUzIMcZQ/0.jpg" alt="YouTube Thumbnail">
-    <img src="https://img.youtube.com/vi/ktvTqknDobU/0.jpg" alt="YouTube Thumbnail">
-    <img src="https://img.youtube.com/vi/L_jWHffIx5E/0.jpg" alt="YouTube Thumbnail">
-    <img src="https://img.youtube.com/vi/kXYiU_JCYtU/0.jpg" alt="YouTube Thumbnail">
-  </div>
+  <h1>Unsolicited Industries™</h1>
+  <p>Ongoing art and design projects conducted by Megan Bowker</p>
+
+  <textarea id="message" placeholder="Leave a message..."></textarea>
+  <button onclick="submitMessage()">Submit</button>
+
+  <div class="comments" id="comments"></div>
+
+  <script>
+    function submitMessage() {
+      const message = document.getElementById("message").value.trim();
+      if (message) {
+        const commentSection = document.getElementById("comments");
+        const newComment = document.createElement("div");
+        newComment.className = "comment";
+        newComment.textContent = message;
+        commentSection.prepend(newComment);
+        document.getElementById("message").value = "";
+      }
+    }
+  </script>
 </body>
 </html>
